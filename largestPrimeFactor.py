@@ -18,8 +18,6 @@ def primeGenerator(n):
         if isPrime(i):
             prime.append(i)
 
-    print(prime)
-
     return prime
 
 def findPrimeFactor(n):
@@ -27,8 +25,18 @@ def findPrimeFactor(n):
     filtered = []
 
     for p in primeList:
-        print(p)
+        if n % p == 0:
+            filtered.append(p)
+
+    print(filtered)
+    return filtered
 
 
-test_num = 10
-findPrimeFactor(test_num)
+def findMaxFactor(factors):
+    return max(factors)
+
+
+test_num = 600851475143
+factors = findPrimeFactor(test_num)
+myMaxFactor = findMaxFactor(factors)
+print("The largest prime of", test_num, ' =', myMaxFactor)
